@@ -4,8 +4,8 @@
 
 <table>
   <% @products.each do |product| %>
-    <tr class="<%= cycle('list_line_odd', 'list_line_even') %>"> <!-- each row to either list_line_even or list_line_odd, automatically toggling between the two
-                                                                      style names on successive lines. -->
+    <tr class="<%= cycle('list_line_odd', 'list_line_even') %>"> 
+    <!-- each row to either list_line_even or list_line_odd, automatically toggling between the two style names on successive lines -->
       <td>
         <%= image_tag(product.image_url, class: 'list_image') %> 
       </td>
@@ -16,8 +16,8 @@
             <%= product.title %>
           </dt>
           <dd>
-            <%= truncate(strip_tags(product.description),length: 1000) %> <!-- truncate() helper is used to display the first 1000 characters of the description.
-                                                                          --> 
+            <%= truncate(strip_tags(product.description),length: 1000) %> 
+            <!-- truncate() helper is used to display the first 1000 characters of the description --> 
           </dd>
         </dl> 
       </td>
