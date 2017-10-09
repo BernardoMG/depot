@@ -752,3 +752,31 @@ Processing by ProductsController#index as HTML
 Completed 200 OK in 260ms (Views: 248.7ms | ActiveRecord: 0.9ms)
 
 
+Started GET "/store/index" for 127.0.0.1 at 2017-10-09 17:16:03 +0100
+Processing by StoreController#index as HTML
+  Rendering store/index.html.erb within layouts/application
+  Rendered store/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 152ms (Views: 143.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-09 17:17:29 +0100
+Processing by StoreController#index as HTML
+  Rendering store/index.html.erb within layouts/application
+  Rendered store/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 25ms (Views: 22.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-09 17:44:52 +0100
+Processing by StoreController#index as HTML
+  Rendering store/index.html.erb within layouts/application
+  Rendered store/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 48ms (Views: 40.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-09 17:44:57 +0100
+Processing by StoreController#index as HTML
+  Rendering store/index.html.erb within layouts/application
+  Rendered store/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 27ms (Views: 24.6ms)
+
+

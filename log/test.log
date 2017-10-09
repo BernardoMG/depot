@@ -1180,3 +1180,659 @@ ProductTest: test_product_price_must_be_positive
   [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
   [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
   [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "products"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'dcbang.jpg', 9.99, '2017-10-09 15:56:32.337094', '2017-10-09 15:56:32.337094', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'dcbang.jpg', 9.99, '2017-10-09 15:56:32.337094', '2017-10-09 15:56:32.337094', 298486374)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at", "id") VALUES ('Programming Ruby 1.9', 'Ruby is the fastest growing and most exciting dynamic language out there.  If you need to get working programs delivered fast, you should add Ruby to your toolbox.', 'ruby.png', 49.5, '2017-10-09 15:56:32.337094', '2017-10-09 15:56:32.337094', 207281424)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at", "id") VALUES ('Hello', 'Title lenght test', 'hello.png', 1.0, '2017-10-09 15:56:32.337094', '2017-10-09 15:56:32.337094', 254316708)[0m
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------
+ProductTest: test_product_attributes_must_not_be_empty
+------------------------------------------------------
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------
+ProductTest: test_product_title_must_be_at_least_10_characters_long
+-------------------------------------------------------------------
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 254316708], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "Hello"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------
+ProductTest: test_image_url
+---------------------------
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+ProductTest: test_product_is_not_valid_without_a_unique_title_-_i18n
+--------------------------------------------------------------------
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 207281424], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "Programming Ruby 1.9"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+ProductTest: test_product_is_not_valid_without_a_unique_title
+-------------------------------------------------------------
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 207281424], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "Programming Ruby 1.9"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+ProductTest: test_product_price_must_be_positive
+------------------------------------------------
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "products"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'dcbang.jpg', 9.99, '2017-10-09 15:58:45.388399', '2017-10-09 15:58:45.388399', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'dcbang.jpg', 9.99, '2017-10-09 15:58:45.388399', '2017-10-09 15:58:45.388399', 298486374)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at", "id") VALUES ('Programming Ruby 1.9', 'Ruby is the fastest growing and most exciting dynamic language out there.  If you need to get working programs delivered fast, you should add Ruby to your toolbox.', 'ruby.png', 49.5, '2017-10-09 15:58:45.388399', '2017-10-09 15:58:45.388399', 207281424)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at", "id") VALUES ('Hello World', 'Title lenght test', 'hello.png', 1.0, '2017-10-09 15:58:45.388399', '2017-10-09 15:58:45.388399', 254316708)[0m
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------
+ProductTest: test_product_attributes_must_not_be_empty
+------------------------------------------------------
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+ProductTest: test_product_is_not_valid_without_a_unique_title
+-------------------------------------------------------------
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 207281424], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "Programming Ruby 1.9"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+ProductTest: test_product_price_must_be_positive
+------------------------------------------------
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------
+ProductTest: test_product_title_must_be_at_least_10_characters_long
+-------------------------------------------------------------------
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 254316708], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "Hello World"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------
+ProductTest: test_image_url
+---------------------------
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+ProductTest: test_product_is_not_valid_without_a_unique_title_-_i18n
+--------------------------------------------------------------------
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 207281424], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "Programming Ruby 1.9"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "products"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'dcbang.jpg', 9.99, '2017-10-09 15:59:23.440397', '2017-10-09 15:59:23.440397', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'dcbang.jpg', 9.99, '2017-10-09 15:59:23.440397', '2017-10-09 15:59:23.440397', 298486374)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at", "id") VALUES ('Programming Ruby 1.9', 'Ruby is the fastest growing and most exciting dynamic language out there.  If you need to get working programs delivered fast, you should add Ruby to your toolbox.', 'ruby.png', 49.5, '2017-10-09 15:59:23.440397', '2017-10-09 15:59:23.440397', 207281424)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at", "id") VALUES ('Hello World', 'Title lenght test', 'hello.png', 1.0, '2017-10-09 15:59:23.440397', '2017-10-09 15:59:23.440397', 254316708)[0m
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------
+ProductTest: test_image_url
+---------------------------
+  [1m[36mProduct Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------
+ProductTest: test_product_attributes_must_not_be_empty
+------------------------------------------------------
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+ProductTest: test_product_is_not_valid_without_a_unique_title_-_i18n
+--------------------------------------------------------------------
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 207281424], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "Programming Ruby 1.9"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------
+ProductTest: test_product_title_must_be_at_least_10_characters_long
+-------------------------------------------------------------------
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 254316708], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "Hello World"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+ProductTest: test_product_price_must_be_positive
+------------------------------------------------
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+ProductTest: test_product_is_not_valid_without_a_unique_title
+-------------------------------------------------------------
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 207281424], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "Programming Ruby 1.9"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "products"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'dcbang.jpg', 9.99, '2017-10-09 15:59:38.376118', '2017-10-09 15:59:38.376118', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'dcbang.jpg', 9.99, '2017-10-09 15:59:38.376118', '2017-10-09 15:59:38.376118', 298486374)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at", "id") VALUES ('Programming Ruby 1.9', 'Ruby is the fastest growing and most exciting dynamic language out there.  If you need to get working programs delivered fast, you should add Ruby to your toolbox.', 'ruby.png', 49.5, '2017-10-09 15:59:38.376118', '2017-10-09 15:59:38.376118', 207281424)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at", "id") VALUES ('Hello World', 'Title lenght test', 'hello.png', 1.0, '2017-10-09 15:59:38.376118', '2017-10-09 15:59:38.376118', 254316708)[0m
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------
+ProductTest: test_product_title_must_be_at_least_10_characters_long
+-------------------------------------------------------------------
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 254316708], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "Hello World"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+ProductTest: test_product_is_not_valid_without_a_unique_title_-_i18n
+--------------------------------------------------------------------
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 207281424], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "Programming Ruby 1.9"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------
+ProductTest: test_product_attributes_must_not_be_empty
+------------------------------------------------------
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+ProductTest: test_product_price_must_be_positive
+------------------------------------------------
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+---------------------------
+ProductTest: test_image_url
+---------------------------
+  [1m[36mProduct Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+ProductTest: test_product_is_not_valid_without_a_unique_title
+-------------------------------------------------------------
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 207281424], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "Programming Ruby 1.9"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "products"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'dcbang.jpg', 9.99, '2017-10-09 16:00:21.885908', '2017-10-09 16:00:21.885908', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'dcbang.jpg', 9.99, '2017-10-09 16:00:21.885908', '2017-10-09 16:00:21.885908', 298486374)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at", "id") VALUES ('Programming Ruby 1.9', 'Ruby is the fastest growing and most exciting dynamic language out there.  If you need to get working programs delivered fast, you should add Ruby to your toolbox.', 'ruby.png', 49.5, '2017-10-09 16:00:21.885908', '2017-10-09 16:00:21.885908', 207281424)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at", "id") VALUES ('Hello', 'Title lenght test', 'hello.png', 1.0, '2017-10-09 16:00:21.885908', '2017-10-09 16:00:21.885908', 254316708)[0m
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------
+ProductTest: test_image_url
+---------------------------
+  [1m[36mProduct Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+ProductTest: test_product_is_not_valid_without_a_unique_title
+-------------------------------------------------------------
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 207281424], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "Programming Ruby 1.9"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+ProductTest: test_product_price_must_be_positive
+------------------------------------------------
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------
+ProductTest: test_product_attributes_must_not_be_empty
+------------------------------------------------------
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------
+ProductTest: test_product_title_must_be_at_least_10_characters_long
+-------------------------------------------------------------------
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 254316708], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "Hello"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+ProductTest: test_product_is_not_valid_without_a_unique_title_-_i18n
+--------------------------------------------------------------------
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 207281424], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "Programming Ruby 1.9"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "products"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'dcbang.jpg', 9.99, '2017-10-09 16:01:56.200339', '2017-10-09 16:01:56.200339', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'dcbang.jpg', 9.99, '2017-10-09 16:01:56.200339', '2017-10-09 16:01:56.200339', 298486374)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at", "id") VALUES ('Programming Ruby 1.9', 'Ruby is the fastest growing and most exciting dynamic language out there.  If you need to get working programs delivered fast, you should add Ruby to your toolbox.', 'ruby.png', 49.5, '2017-10-09 16:01:56.200339', '2017-10-09 16:01:56.200339', 207281424)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at", "id") VALUES ('Hello', 'Title lenght test', 'hello.png', 1.0, '2017-10-09 16:01:56.200339', '2017-10-09 16:01:56.200339', 254316708)[0m
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------
+ProductTest: test_product_title_must_be_at_least_10_characters_long
+-------------------------------------------------------------------
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 254316708], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "Hello"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------
+ProductTest: test_product_attributes_must_not_be_empty
+------------------------------------------------------
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+ProductTest: test_product_price_must_be_positive
+------------------------------------------------
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+ProductTest: test_product_is_not_valid_without_a_unique_title_-_i18n
+--------------------------------------------------------------------
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 207281424], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "Programming Ruby 1.9"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------
+ProductTest: test_image_url
+---------------------------
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+ProductTest: test_product_is_not_valid_without_a_unique_title
+-------------------------------------------------------------
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 207281424], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "Programming Ruby 1.9"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "products"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'dcbang.jpg', 9.99, '2017-10-09 16:02:14.930824', '2017-10-09 16:02:14.930824', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'dcbang.jpg', 9.99, '2017-10-09 16:02:14.930824', '2017-10-09 16:02:14.930824', 298486374)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at", "id") VALUES ('Programming Ruby 1.9', 'Ruby is the fastest growing and most exciting dynamic language out there.  If you need to get working programs delivered fast, you should add Ruby to your toolbox.', 'ruby.png', 49.5, '2017-10-09 16:02:14.930824', '2017-10-09 16:02:14.930824', 207281424)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at", "id") VALUES ('Hello', 'Title lenght test', 'hello.png', 1.0, '2017-10-09 16:02:14.930824', '2017-10-09 16:02:14.930824', 254316708)[0m
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------
+ProductTest: test_product_attributes_must_not_be_empty
+------------------------------------------------------
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------
+ProductTest: test_image_url
+---------------------------
+  [1m[36mProduct Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------
+ProductTest: test_product_title_must_be_at_least_10_characters_long
+-------------------------------------------------------------------
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 254316708], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "Hello"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+ProductTest: test_product_price_must_be_positive
+------------------------------------------------
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+ProductTest: test_product_is_not_valid_without_a_unique_title
+-------------------------------------------------------------
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 207281424], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "Programming Ruby 1.9"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+ProductTest: test_product_is_not_valid_without_a_unique_title_-_i18n
+--------------------------------------------------------------------
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 207281424], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "Programming Ruby 1.9"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "products"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'dcbang.jpg', 9.99, '2017-10-09 16:02:30.561187', '2017-10-09 16:02:30.561187', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'dcbang.jpg', 9.99, '2017-10-09 16:02:30.561187', '2017-10-09 16:02:30.561187', 298486374)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at", "id") VALUES ('Programming Ruby 1.9', 'Ruby is the fastest growing and most exciting dynamic language out there.  If you need to get working programs delivered fast, you should add Ruby to your toolbox.', 'ruby.png', 49.5, '2017-10-09 16:02:30.561187', '2017-10-09 16:02:30.561187', 207281424)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at", "id") VALUES ('Hello', 'Title lenght test', 'hello.png', 1.0, '2017-10-09 16:02:30.561187', '2017-10-09 16:02:30.561187', 254316708)[0m
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------
+ProductTest: test_product_attributes_must_not_be_empty
+------------------------------------------------------
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+ProductTest: test_product_price_must_be_positive
+------------------------------------------------
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+ProductTest: test_product_is_not_valid_without_a_unique_title_-_i18n
+--------------------------------------------------------------------
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 207281424], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "Programming Ruby 1.9"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------
+ProductTest: test_image_url
+---------------------------
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+ProductTest: test_product_is_not_valid_without_a_unique_title
+-------------------------------------------------------------
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 207281424], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "Programming Ruby 1.9"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------
+ProductTest: test_product_title_must_be_at_least_10_characters_long
+-------------------------------------------------------------------
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 254316708], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "Hello"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "products"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'dcbang.jpg', 9.99, '2017-10-09 16:04:42.094845', '2017-10-09 16:04:42.094845', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'dcbang.jpg', 9.99, '2017-10-09 16:04:42.094845', '2017-10-09 16:04:42.094845', 298486374)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at", "id") VALUES ('Programming Ruby 1.9', 'Ruby is the fastest growing and most exciting dynamic language out there.  If you need to get working programs delivered fast, you should add Ruby to your toolbox.', 'ruby.png', 49.5, '2017-10-09 16:04:42.094845', '2017-10-09 16:04:42.094845', 207281424)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at", "id") VALUES ('Hello', 'Title lenght test', 'hello.png', 1.0, '2017-10-09 16:04:42.094845', '2017-10-09 16:04:42.094845', 254316708)[0m
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+ProductTest: test_product_is_not_valid_without_a_unique_title_-_i18n
+--------------------------------------------------------------------
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 207281424], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "Programming Ruby 1.9"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+ProductTest: test_product_price_must_be_positive
+------------------------------------------------
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------
+ProductTest: test_product_title_must_be_at_least_10_characters_long
+-------------------------------------------------------------------
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 254316708], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "Hello"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------
+ProductTest: test_image_url
+---------------------------
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------
+ProductTest: test_product_attributes_must_not_be_empty
+------------------------------------------------------
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "products"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'dcbang.jpg', 9.99, '2017-10-09 16:05:50.783871', '2017-10-09 16:05:50.783871', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'dcbang.jpg', 9.99, '2017-10-09 16:05:50.783871', '2017-10-09 16:05:50.783871', 298486374)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at", "id") VALUES ('Programming Ruby 1.9', 'Ruby is the fastest growing and most exciting dynamic language out there.  If you need to get working programs delivered fast, you should add Ruby to your toolbox.', 'ruby.png', 49.5, '2017-10-09 16:05:50.783871', '2017-10-09 16:05:50.783871', 207281424)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at", "id") VALUES ('Hello', 'Title lenght test', 'hello.png', 1.0, '2017-10-09 16:05:50.783871', '2017-10-09 16:05:50.783871', 254316708)[0m
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+ProductTest: test_product_is_not_valid_without_a_unique_title_-_i18n
+--------------------------------------------------------------------
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 207281424], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "Programming Ruby 1.9"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------
+ProductTest: test_product_attributes_must_not_be_empty
+------------------------------------------------------
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------
+ProductTest: test_image_url
+---------------------------
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------
+ProductTest: test_product_title_must_be_at_least_10_characters_long
+-------------------------------------------------------------------
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 254316708], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "Hello"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+ProductTest: test_product_is_not_valid_without_a_unique_title
+-------------------------------------------------------------
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 207281424], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "Programming Ruby 1.9"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+ProductTest: test_product_price_must_be_positive
+------------------------------------------------
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "products"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'dcbang.jpg', 9.99, '2017-10-09 16:08:07.687631', '2017-10-09 16:08:07.687631', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'dcbang.jpg', 9.99, '2017-10-09 16:08:07.687631', '2017-10-09 16:08:07.687631', 298486374)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at", "id") VALUES ('Programming Ruby 1.9', 'Ruby is the fastest growing and most exciting dynamic language out there.  If you need to get working programs delivered fast, you should add Ruby to your toolbox.', 'ruby.png', 49.5, '2017-10-09 16:08:07.687631', '2017-10-09 16:08:07.687631', 207281424)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at", "id") VALUES ('Hello', 'Title lenght test', 'hello.png', 1.0, '2017-10-09 16:08:07.687631', '2017-10-09 16:08:07.687631', 254316708)[0m
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+ProductTest: test_product_is_not_valid_without_a_unique_title
+-------------------------------------------------------------
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 207281424], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "Programming Ruby 1.9"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------
+ProductTest: test_product_title_must_be_at_least_10_characters_long
+-------------------------------------------------------------------
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 254316708], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "Hello"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+ProductTest: test_product_is_not_valid_without_a_unique_title_-_i18n
+--------------------------------------------------------------------
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 207281424], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "Programming Ruby 1.9"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+ProductTest: test_product_price_must_be_positive
+------------------------------------------------
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------
+ProductTest: test_image_url
+---------------------------
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "My Book Title"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------
+ProductTest: test_product_attributes_must_not_be_empty
+------------------------------------------------------
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m

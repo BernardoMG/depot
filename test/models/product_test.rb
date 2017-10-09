@@ -68,4 +68,15 @@ class ProductTest < ActiveSupport::TestCase
 		assert product.invalid?
 		assert_equal [I18n.translate('errors.messages.taken')], product.errors[:title]
 	end
+
+	test "product title must be at least 10 characters long" do 
+		product = Product.new(
+			title: products(:short).title, 
+			description: products(:short).description, 
+			price: products(:short).price, 
+			image_url: products(:short).image_url
+		)
+		assert product.invalid?
+		assert_equal ["has already been taken", "Title must be at least 10 characters."], product.errors[:title]
+	end
 end
