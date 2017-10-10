@@ -15,11 +15,11 @@ two:
 ruby:
   title: Programming Ruby 1.9 
   description: Ruby is the fastest growing and most exciting dynamic language out there.  If you need to get working programs delivered fast, you should add Ruby to your toolbox.
-  image_url: ruby.png
+  image_url: dcbang.jpg
   price: 49.50 
 
 short:
   title: Hello
   description: Title lenght test
-  image_url: hello.png
+  image_url: dcbang.jpg
   price: 1.0 

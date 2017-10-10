@@ -4,7 +4,7 @@
 
 .products {
 	table {
-		border-collapse: collapse;
+		/*border-collapse: collapse;*/
 	}
 
 	table tr td {
@@ -30,18 +30,26 @@
 	dd {
 		margin: 0;
 	}
+
+	.actions {
+		margin-bottom: 100px;
+		/*color:  black;*/
+		/*font-weight: bold;*/
+		font-size: medium;
+	}
 	
 	.list_actions {
+		vertical-align: middle;
 		font-size: medium;
 		text-align: right;
 		padding-left: 1.5em;
 	}
 
 	.list_line_even {
-		background: #e0f8f8;
+		background: #8FBC8F;
 	}
 
 	.list_line_odd {
-		background: #f8b0f8;
+		background: #5F9EA0;
 	}
 }
