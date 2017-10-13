@@ -32,7 +32,11 @@
 					<a href="http://www..../contact">Contact</a>
 				</li>
 			</ul>
-
+			
+			<% if @counter %>
+				<p id=session> <%= pluralize session[:counter], 'time' %> </p>
+			<% end %>
+			
 			<p id=time> <%= get_current_time %> </p> 
 		</div>
 		<div id="main"> 
