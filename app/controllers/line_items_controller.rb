@@ -67,10 +67,22 @@ class LineItemsController < ApplicationController
   # DELETE /line_items/1
   # DELETE /line_items/1.json
   def destroy
-    @line_item.destroy
-    respond_to do |format|
-      format.html { redirect_to line_items_url, notice: 'Line item was successfully destroyed.' }
-      format.json { head :no_content }
+    if @line_item.quantity > 1
+      @line_item.update_attributes(quantity: @line_item.quantity - 1)
+      respond_to do |format|
+        format.html { redirect_to @line_item.cart, notice: 'Item Removed' }
+        format.xml  { head :no_content }
+      end
+    else
+      @line_item.destroy
+      respond_to do |format|
+        if @line_item.cart.line_items.empty?
+          format.html { redirect_to store_index_url, notice: 'Your cart is empty' }
+        else
+          format.html { redirect_to @line_item.cart, notice: 'Item Removed' }
+        end
+        format.xml { head :ok }
+      end
     end
   end
 
@@ -86,7 +98,7 @@ class LineItemsController < ApplicationController
     params.require(:line_item).permit(:product_id)
   end
 
-  # Attempt to access invalid line item
+  # Attempt to access invalid line
   def invalid_line_item
     logger.error "Attempt to access invalid line item #{params[:id]}"
     redirect_to line_items_url, notice: 'Invalid line item'
