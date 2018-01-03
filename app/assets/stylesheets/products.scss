@@ -3,13 +3,10 @@
  You can use Sass (SCSS) here: http://sass-lang.com/ */
 
 .products {
-	// table {
-	 	/*border-collapse: collapse;*/
-	// }
-
 	table tr td {
 		padding: 5px;
 		vertical-align: top;
+		border: 1px solid black;
 	}
 
 	.list_image {
@@ -46,11 +43,11 @@
 		padding-right: 1em;
 	}
 
-	.list_line_even {
-		background: #8FBC8F;
-	}
+	// .list_line_even {
+	// 	background: #8FBC8F;
+	// }
 
-	.list_line_odd {
-		background: #5F9EA0;
-	}
+	// .list_line_odd {
+	// 	background: #5F9EA0;
+	// }
 }
