@@ -24,7 +24,7 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
 
     assert_select 'h2', 'Your Cart'
     # \u00D7 -> X
-    assert_select '#main table tr .item_title', 'Programming Ruby 1.9'
+    assert_select '#cart table tr .item_title', 'Programming Ruby 1.9'
   end
 
   test 'should show line_item' do
