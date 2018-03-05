@@ -38,7 +38,7 @@
 
         <% if @cart %>
           <div id='cart'>
-						<% if @cart.line_items.any? %>
+						<%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
 							<%= render @cart %>
 						<% end %>
           </div>
