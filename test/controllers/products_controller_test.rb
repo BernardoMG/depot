@@ -6,7 +6,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     @update = {
       title: 'Lorem Ipsum',
       description: 'Wibbles are fun!',
-      image_url: 'lorem.jpg',
+      image_url: 'rails.png',
       price: 19.95
     }
   end
@@ -31,7 +31,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create product" do
     assert_difference('Product.count') do
-    post products_url, params: { product: @update }    
+    post products_url, params: { product: @update }
   end
 
     assert_redirected_to product_url(Product.last)
