@@ -4,18 +4,18 @@
     <title>Depot</title>
     <%= csrf_meta_tags %>
 
+		<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-	<body class='<%= controller.controller_name %>'> 
+	<body class='<%= controller.controller_name %>'>
 		<div id='banner'>
-			<%= image_tag 'logo.svg', alt: 'The Pragmatic Bookshelf' %> 
+			<%= image_tag 'logo.svg', alt: 'The Pragmatic Bookshelf' %>
 			<span class='title'>
 				<%= @page_title %>
 			</span>
 		</div>
-		
+
 		<div id='columns'>
 			<div id='side'>
 				<ul>
@@ -27,32 +27,31 @@
 					</li>
 					<li>
 						<a href='http://www..../faq'>Questions</a>
-					</li> 
+					</li>
 					<li>
 						<a href='http://www..../news'>News</a>
-					</li> 
-					<li>
-						<a href='http://www..../contact'>Contact</a>
 					</li>
 					<li>
 						<a href='http://www..../contact'>Contact</a>
 					</li>
 				</ul>
 
-        <% if @cart && !@cart.line_items.empty? %>
+        <% if @cart %>
           <div id='cart'>
-            <%= render @cart %>
+						<%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+							<%= render @cart %>
+						<% end %>
           </div>
         <% end %>
-				
+
 				<% if @counter %>
 					<p id='session'> <%= pluralize session[:counter], 'time' %> </p>
 				<% end %>
 			</div>
 
-			<div id='main'> 
+			<div id='main'>
 				<%= yield %>
 			</div>
-		</div> 
+		</div>
 	</body>
 </html>

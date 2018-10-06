@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :line_items
+  resources :orders
+  resources :line_items do
+    post 'decrement', on: :member
+  end
   resources :carts
   root 'store#index', as: 'store_index' # define the store/index as root view for our app
 

@@ -1,14 +1,6 @@
-#---
-# Excerpted from "Agile Web Development with Rails 5",
-# published by The Pragmatic Bookshelf.
-# Copyrights apply to this code. It may not be used to create training material,
-# courses, books, articles, and the like. Contact us if you are in doubt.
-# We make no guarantees that this code is fit for any purpose.
-# Visit http://www.pragmaticprogrammer.com/titles/rails5 for more book information.
-#---
 class LineItemsController < ApplicationController
   include CurrentCart
-  before_action :set_cart, only: [:create]
+  before_action :set_cart, only: [:create, :decrement]
   before_action :set_line_item, only: %i[show edit update destroy]
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_line_item
 
@@ -42,6 +34,7 @@ class LineItemsController < ApplicationController
       if @line_item.save
         session[:counter] = 0
         format.html { redirect_to store_index_url }
+        format.js { @current_item = @line_item }
         format.json { render :show, status: :created, location: @line_item }
       else
         format.html { render :new }
@@ -82,6 +75,24 @@ class LineItemsController < ApplicationController
           format.html { redirect_to @line_item.cart, notice: 'Item Removed' }
         end
         format.xml { head :ok }
+      end
+    end
+  end
+
+  # DECREMENT /line_items/1
+  # DECREMENT /line_items/1.json
+  def decrement
+    @line_item = @cart.decrement_line_item_quantity(params[:id])
+
+    respond_to do |format|
+      if @line_item.save
+        format.html { redirect_to store_index_url, notice: 'Line item was successfully updated.' }
+        format.js   { @current_item = @line_item }
+        format.json { render :show, status: :ok, location: @line_item }
+      else
+       format.html { render action: 'edit' }
+       format.js   { @current_item = @line_item }
+       format.json { render json: @line_item.errors, status: :unprocessable_entity }
       end
     end
   end
